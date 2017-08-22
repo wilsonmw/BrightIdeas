@@ -1,0 +1,72 @@
+/*Write all of your CSS here*/
+span{
+    color: red;
+}
+
+#ideas{
+    border: 1px solid black;
+    display: inline-block;
+    width: 30%;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: gray;
+    box-shadow: 3px 3px 0px 0px;
+}
+
+body{
+    padding: 20px;
+    background-color: #70C5CA;
+}
+
+#header{
+    margin-left: 65%;
+}
+
+.regPage{
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 2%;
+    background-color: gray;
+    box-shadow: 3px 3px 0px 0px;
+}
+
+.button{
+    height: 30px;
+    border-radius: 7px;
+    font-size: 1em;
+    box-shadow: 3px 3px 0px 0px;
+}
+
+table, tr, th, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+tr, th, td{
+    padding: 2%;
+    width: 60%;
+}
+
+table{
+    background-color: gray;
+    box-shadow: 3px 3px 0px 0px;
+}
+
+#person{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 2%;
+    background-color: gray;
+    box-shadow: 3px 3px 0px 0px;
+}
+
+#ideas a{
+    margin-left: 2%;
+}
+#header a{
+    margin-left: 2%;
+}

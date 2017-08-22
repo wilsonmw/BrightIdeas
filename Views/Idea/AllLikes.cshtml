@@ -1,0 +1,19 @@
+@Html.Partial("Header")
+
+<p>@ViewBag.currentIdea.User.Alias says:</p>
+<p>@ViewBag.currentIdea.Content</p>
+
+<h3>People who liked this post:</h3>
+
+<table>
+    <tr>
+        <th>Alias</th>
+        <th>Name</th>
+    </tr>
+    @{foreach (var person in @ViewBag.currentIdea.Likes){
+    <tr>
+        <td><a href="/personView/@person.User.UserID">@person.User.Alias</a></td>
+        <td>@person.User.Name</td>
+    </tr>
+    }}
+</table>

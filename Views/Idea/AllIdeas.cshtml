@@ -1,0 +1,33 @@
+@Html.Partial("Header")
+
+<h1>Hi @ViewBag.currentUser.Alias!</h1>
+<span>@ViewBag.postError</span>
+<form id ="ideaForm" action="/newIdea" method="POST">
+    <textarea name="newContent" rows='3' cols='60'placeholder="Post something witty here..."></textarea>
+    <input type="hidden" name="posterID" value="@ViewBag.currentUser.UserID">
+    <input type='submit' value="Idea!" class="button">
+</form>
+<br>
+
+@{foreach(var idea in @ViewBag.allIdeas){
+    bool alreadyLiked = false;
+    <div id="ideas">
+    <p><a href="/personView/@idea.User.UserID">@idea.User.Alias</a> says:</p>
+    <p>@idea.Content</p>
+    @foreach(var like in idea.Likes){
+        if(like.UserID == @ViewBag.currentUser.UserID){
+            alreadyLiked = true;
+        }
+    }
+    @if(alreadyLiked == true){
+        <a href="/unlike/@idea.IdeaID">Unlike</a>
+    }
+    else{
+        <a href="/like/@idea.IdeaID">Like</a>
+    }
+    <a href="/allLikes/@idea.IdeaID">@idea.LikeCount People Like This</a>
+    @if(@idea.UserID == @ViewBag.currentUser.UserID){
+        <a href="/deleteIdea/@idea.IdeaID">Delete Idea</a>
+    }
+    </div><br>
+}}
